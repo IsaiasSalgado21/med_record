@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->bigIncrements('id_paciente');
-            $table->unsignedBigInteger('id_usuario');
+            $table->bigInteger('id_usuario')->unsigned();
             $table->string('direccion');
             $table->string('telefono');
             $table->string('estado_salud');
-            $table->dateTime('fecha_creacion')->default(now());
-            $table->dateTime('fecha_modificacion')->nullable();
+            $table->timestamps();
 
             $table->foreign('id_usuario')
                   ->references('id_usuario')

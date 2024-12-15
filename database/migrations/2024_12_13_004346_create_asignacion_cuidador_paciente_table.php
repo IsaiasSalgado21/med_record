@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('fecha_termino')->nullable();  
             $table->foreign('id_cuidador')->references('id_usuario')->on('usuarios')->onDelete('cascade');
             $table->foreign('id_paciente')->references('id_paciente')->on('pacientes')->onDelete('cascade');
+            
         });
     }
 
